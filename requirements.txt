@@ -1,2 +1,7 @@
-sphinx==3.3.0
-sphinx-copybutton
+Sphinx<1.9
+git+git://github.com/f5devcentral/f5-sphinx-theme@master#egg=f5_sphinx_theme
+recommonmark
+sphinxcontrib-googleanalytics
+sphinxcontrib-addmetahtml
+#sphinxcontrib-nwdiag
+#sphinxcontrib-blockdiag
