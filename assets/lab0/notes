@@ -1,0 +1,14 @@
+Lab Setup
+https://f5-lab-days-hashi-basics.readthedocs.io/en/latest/index.html
+
+# Run additional docker instances on app server
+
+#docker run --restart unless-stopped -d -p 3000:3000 bkimminich/juice-shop
+docker run --restart unless-stopped -d -p 3001:3000 bkimminich/juice-shop
+#sudo docker run -P -p 0.0.0.0:8080:80/tcp -d --restart unless-stopped nginxdemos/hello 
+docker run -P -p 0.0.0.0:8081:80/tcp -d --restart unless-stopped nginxdemos/hello 
+
+# Restart docker instances on client server
+Firefox
+docker container restart
+docker run -d --name=firefox -p 5800:5800 -v /docker/appdata/firefox:/config:rw --shm-size 2g jlesage/firefox
