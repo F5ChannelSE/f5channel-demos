@@ -1,46 +1,8 @@
 Demo 1 - Mitigating OWASP Top 10 with Advanced WAF
 ==================================================
 
-#. Confirm BIG-IP is not configured
+#. Confirm BIG-IP virtual servers are configured
 
-   - Explore BIG-IP GUI **Local Traffic -> Network Map** to validate tenant_02 app services does not exist
+   - Explore BIG-IP GUI **Local Traffic -> Virtual Servers** to juice and hackazon apps are deployed
 
-#. Create **main.tf** to use terraform bigip provider
-
-   - Open client server **vscode termninal**
-   - ``mkdir ~/projects/lab3``
-   - ``cd ~/projects/lab3``
-   - ``touch main.tf``
-   - use vscode to add the following code to **main.tf**
-
-   .. code:: json
-
-      terraform {
-        required_providers {
-          bigip = {
-            source = "F5Networks/bigip"
-          }
-        }
-      }
-
-      provider "bigip" {
-          address = var.address
-          username = var.username
-          password = var.password
-      }
-
-      resource "bigip_as3"  "tenant02_app3" {
-         as3_json = "${file("app3.json")}"
-      }
-
-#. Create **variables.tf**
-
-   - ``touch variables.tf``
-   - use vscode to add the following code to **variables.tf**
-
-   .. code:: json
-
-      variable "address" {}
-      variable "username" {}
-      variable "password" {}
 
