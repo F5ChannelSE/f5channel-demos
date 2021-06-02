@@ -93,7 +93,7 @@ html_theme_path = ["_themes", ]
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+#html_static_path = ['_static']
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -109,7 +109,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'NGINXAppProtectdoc'
+htmlhelp_basename = 'F5ChannelDemos'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -136,8 +136,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'NGINXAppProtect.tex', u'NGINX App Protect Documentation',
-     u'Matthieu Dierick', 'manual'),
+    (master_doc, 'f5channeldemos.tex', u'F5 Channel Demo Documentation',
+     u'Ed Rabago', 'manual'),
 ]
 
 
@@ -146,7 +146,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'nginxappprotect', u'NGINX App Protect Documentation',
+    (master_doc, 'f5channeldemos', u'F5 Channel Demo Documentation',
      [author], 1)
 ]
 
@@ -157,8 +157,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'NGINXAppProtect', u'NGINX App Protect Documentation',
-     author, 'NGINXAppProtect', 'One line description of project.',
+    (master_doc, 'f5channeldemos', u'F5 Channel Demo Documentation',
+     author, 'f5channeldemos', 'One line description of project.',
      'Miscellaneous'),
 ]
 
