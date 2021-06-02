@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Getting Started &mdash; F5 Channels Partner Demos  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="F5Channel Partner Demos" href="class1/class1.html" />
+    <link rel="prev" title="F5 Channel Demos - Index" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> F5 Channels Partner Demos
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#lab-topology">Lab Topology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#network-addressing">Network Addressing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#access-demo-environment">Access Demo Environment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class1/class1.html">F5Channel Partner Demos</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">F5 Channels Partner Demos</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Getting Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/intro.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>Please follow the instructions provided by the instructor to start your
+lab and access your jump host.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All work for this lab will be performed exclusively from the Windows
+jumphost. No installation or interaction with your local system is
+required.</p>
+</div>
+<div class="section" id="lab-topology">
+<h2>Lab Topology<a class="headerlink" href="#lab-topology" title="Permalink to this headline">¶</a></h2>
+<p>The following components have been included in your lab environment:</p>
+<ul class="simple">
+<li><p>1 BIG-IP virtual appliances (16.0.x)</p></li>
+<li><p>1 Ubuntu client server running:</p>
+<ul>
+<li><p>vscode</p></li>
+<li><p>firefox</p></li>
+</ul>
+</li>
+<li><p>1 Ubuntu application server running:</p>
+<ul>
+<li><p>OWASP Juice Shop (App port 80 &amp; 81)</p></li>
+<li><p>Hackazon (App port 8080 &amp; 8081)</p></li>
+<li><p>NGINX Demo App (App port 82 &amp; 83)</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="network-addressing">
+<h3>Network Addressing<a class="headerlink" href="#network-addressing" title="Permalink to this headline">¶</a></h3>
+<p>The following table lists VLANS, IP Addresses and Credentials for all
+components:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Component</strong></p></th>
+<th class="head"><p><strong>Management</strong></p></th>
+<th class="head"><p><strong>Internal</strong></p></th>
+<th class="head"><p><strong>External</strong></p></th>
+<th class="head"><p><strong>Additional IP</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Client Server</p></td>
+<td><p>10.1.1.2</p></td>
+<td><p>10.1.10.2</p></td>
+<td><p>10.1.20.2</p></td>
+<td><p>none</p></td>
+</tr>
+<tr class="row-odd"><td><p>App Server</p></td>
+<td><p>10.1.1.3</p></td>
+<td><p>10.1.10.3</p></td>
+<td><p>10.1.20.3</p></td>
+<td><p>none</p></td>
+</tr>
+<tr class="row-even"><td><p>BIG-IP1</p></td>
+<td><p>10.1.1.245</p></td>
+<td><p>10.1.10.245</p></td>
+<td><p>10.1.20.245</p></td>
+<td><p>none</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="access-demo-environment">
+<h2>Access Demo Environment<a class="headerlink" href="#access-demo-environment" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Click the <strong>Go to my VM List</strong> then find <strong>show details</strong> of ubuntu server to capture <strong>external address</strong></p>
+<img alt="_images/demolab.png" src="_images/demolab.png" />
+</li>
+<li><p>Browse to <strong>External Address:8080</strong> to access <strong>VS Code</strong> remote session</p></li>
+<li><p>Open <strong>New Terminal</strong> in <strong>VS Code</strong> to run commands in this lab</p>
+<img alt="_images/newterm.png" src="_images/newterm.png" />
+</li>
+<li><p>Browse to <strong>External Address:5800</strong> to access <strong>Firefox</strong> remote browser</p></li>
+<li><p>From <strong>Firefox</strong> login to BIG-IP management interface (<a class="reference external" href="https://10.1.1.245">https://10.1.1.245</a>).  From <strong>VM List-&gt;BIG-IP</strong> click on <strong>show details</strong> then <strong>password</strong> to reveal password.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may copy password to clipboard however Ctrl+c and Ctrl+v does not work with the firefox web instance.  You must paste into firefox cliboard and submit, then rtclk paste to paste as shown in the images below</p>
+</div>
+<img alt="_images/clipboard.png" src="_images/clipboard.png" />
+<img alt="_images/paste.png" src="_images/paste.png" />
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="class1/class1.html" class="btn btn-neutral float-right" title="F5Channel Partner Demos" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="F5 Channel Demos - Index" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, F5
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
