@@ -66,41 +66,24 @@ components:
 Access Demo Environment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Click the **ACCESS** dropdown on the **client** ubuntu server, then click **VS CODE**. We will use this for making edits to the terraform files
+#. Click the **Go to my VM List** then find **show details** of ubuntu server to capture **external address** 
 
-   .. image:: /_static/vscode.png
+   .. image:: /_static/demolab.png
       :scale: 40 %
 
-#. Open a **New Terminal** in **VS Code** to run commands in this lab
+#. Browse to **External Address:8080** to access **VS Code** remote session
+
+#. Open **New Terminal** in **VS Code** to run commands in this lab
 
    .. image:: /_static/newterm.png
       :scale: 40 %
 
-#. Update **Terraform** in **VS Code** to version 13.x
+#. Browse to **External Address:5800** to access **Firefox** remote browser
 
-   - run ``terraform -version`` in **VS Code terminal** on bottom of window
-   - if terraform version is **v0.13.2** then **skip to step 7** else continue with upgrade process
-   - ``wget --quiet --continue --show-progress https://releases.hashicorp.com/terraform/0.13.2/terraform_0.13.2_linux_amd64.zip``
-   - ``sudo unzip terraform_0.13.2_linux_amd64.zip``
-   - ``sudo mv terraform /usr/local/bin``
-   - ``terraform -version`` to confirm **v0.13.2**
-   - ``rm terraform_0.13.2_linux_amd64.zip``
-
-   .. image:: /_static/tfupdate.png
-      :scale: 40 %
-
-#. Under components, click the access dropdown on the **client ubuntu** server, then click **Firefox**
-
-   .. image:: /_static/firefox.png
-      :scale: 25 %
-
-   .. image:: /_static/firefox1.png
-      :scale: 25 %
-
-#. Login to BIG-IP management interface (https://10.1.1.6) admin : F5d3vops
+#. From **Firefox** login to BIG-IP management interface (https://10.1.1.245).  From **VM List->BIG-IP** click on **show details** then **password** to reveal password.
 
    .. NOTE::
-      Ctrl+c and Ctrl+v does not work with the firefox web instance.  You must paste into firefox cliboard and submit, then rtclk paste to paste as shown in the images below
+      You may copy password to clipboard however Ctrl+c and Ctrl+v does not work with the firefox web instance.  You must paste into firefox cliboard and submit, then rtclk paste to paste as shown in the images below
 
    .. image:: /_static/clipboard.png
       :scale: 25 %

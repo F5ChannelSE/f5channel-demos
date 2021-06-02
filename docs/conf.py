@@ -5,13 +5,13 @@
 # ------------
 #
 # REQUIRED: Your class/lab name
-classname = "F5Channel Partner Demos"
+classname = "F5 Channels Partner Demos"
 
 # OPTIONAL: The URL to the GitHub Repository for this class
 github_repo = "https://github.com/F5ChannelSE/f5channel-demos"
 
 # OPTIONAL: Google Analytics
-# googleanalytics_id = 'UA-85156643-5'
+# googleanalytics_id = 'UA-85156643-4'
 
 #
 # END CONFIG
@@ -25,10 +25,11 @@ import pkgutil
 import string
 sys.path.insert(0, os.path.abspath('.'))
 import f5_sphinx_theme
-#import sphinx_rtd_theme
+
+smartquotes = False
 
 year = time.strftime("%Y")
-eventname = "Channel SE %s Hands-on Lab Guide" % (year)
+eventname = "Agility %s Hands-on Lab Guide" % (year)
 
 rst_prolog = """
 .. |classname| replace:: %s
@@ -84,8 +85,9 @@ extensions = [
   'sphinx.ext.todo',
   'sphinx.ext.extlinks',
   'sphinx.ext.graphviz',
-  'sphinxcontrib.nwdiag',
-  'sphinxcontrib.blockdiag'
+  #'sphinxcontrib.nwdiag',
+  #'sphinxcontrib.blockdiag',
+  'sphinx_copybutton'
   #'sphinx.ext.autosectionlabel'
 ]
 
@@ -183,9 +185,6 @@ html_theme_options = {
                         'next_prev_link': True
                      }
 html_last_updated_fmt = '%Y-%m-%d %I:%M:%S'
-
-def setup(app):
-    app.add_stylesheet('css/f5_agility_theme.css')
 
 extlinks = {
     'issues':( ("%s/issues/%%s" % github_repo), 'issue ' )
