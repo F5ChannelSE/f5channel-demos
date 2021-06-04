@@ -1,7 +1,7 @@
 F5 Channel Demos - Index
 ========================
 
-Welcome to the |classbold|
+Welcome to the F5 Partner Demo Environment!
 
 .. toctree::
    :maxdepth: 2

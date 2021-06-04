@@ -24,7 +24,7 @@ from sphinx.errors import VersionRequirementError
 
 # -- Project information -----------------------------------------------------
 
-project = u'F5 Channels Partner Demos'
+project = u'F5  Channels Partner Demos'
 copyright = u'2021, F5'
 author = u'Ed Rabago'
 
