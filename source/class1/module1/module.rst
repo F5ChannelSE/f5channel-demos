@@ -21,6 +21,7 @@ Task – Explore BIG-IP AWAF Policy Attachement
 Task Demonstrate a server side cross site scripting (XSS) vulnerability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+#. Open new tab on Firefox browser and select Juice1 from favorites to access protected Juice Shop
 #. Visit the About page so you can see that it hasn't been hacked yet by clicking on the hamburger menu in the top left corner of the page:
 
    .. image:: ./images/hamburger_menu.png
