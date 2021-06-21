@@ -80,10 +80,5 @@ Access Demo Environment
 
 #. From **Firefox** login to BIG-IP management interface (https://10.1.1.245).  From **VM List->BIG-IP** click on **show details** then **password** to reveal password.
 
-   .. NOTE::
-      You may copy password to clipboard however Ctrl+c and Ctrl+v does not work with the firefox web instance.  You must paste into firefox cliboard and submit, then rtclk paste to paste as shown in the images below
-
-   .. image:: /pictures/clipboard.png
-
    .. image:: /pictures/paste.png
 
