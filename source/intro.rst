@@ -76,7 +76,7 @@ Access Demo Environment
 
 #. Browse to **External Address:5800** to access **Firefox** remote browser
 
-#. From **Firefox** login to BIG-IP management interface (https://10.1.1.245).  From **VM List->BIG-IP** click on **show details** then **password** to reveal password.
+#. From **Firefox** login to BIG-IP management interface (https://10.1.1.245).  Credentials should be cached.  From **VM List->BIG-IP** click on **show details** then **password** to reveal password.
 
    .. image:: /pictures/paste.png
 
