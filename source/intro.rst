@@ -78,5 +78,5 @@ Access Demo Environment
 
 #. From **Firefox** login to BIG-IP management interface (https://10.1.1.245).  Credentials should be cached.  From **VM List->BIG-IP** click on **show details** then **password** to reveal password.
 
-   .. image:: /pictures/paste.png
+   .. image:: /pictures/bigiplogin.png
 
