@@ -27,9 +27,16 @@ Task – Demonstrate a SQL injection vulnerability
 
 #. Attack Account Login
 
-  - From Firebox open new tab and access the book marked unprotected **juice2** app
+  - From Firefox browser open new tab and access **juice2** app
   - Click on **Account** then **Login**
-  = this is equal
+  - Enter *' or 1=1; --* for Email and random characters for password
+
+   .. image:: ./images/attacklogin.png
+
+   - Review the successful login as *admin*
+
+   .. image:: ./images/successlogin.png
+
 
 #. Paste the following path in your browser's location bar after the FQDN of the Juice Shop:
 
