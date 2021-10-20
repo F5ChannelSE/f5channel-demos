@@ -18,6 +18,10 @@ Task – Explore BIG-IP AWAF Policy Attachement
    
    .. image:: ./images/owaspcompliance.png
 
+   .. NOTE::
+
+      Notice A7 Cross-site Scripting (XSS) has 100% compliance
+
 Task Demonstrate a server side cross site scripting (XSS) vulnerability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
