@@ -8,7 +8,7 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
 
 #. From Firefox browser explore BIG-IP GUI **Local Traffic -> Virtual Servers** to confirm app1 virtual servers does not exist
 
-#. From VScode terminal examine file **playbooks/app1.yaml**
+#. From VScode terminal examine file ``*playbooks/app1.yaml``
 
    - Type ``nano playbooks/app.yaml`` and note 
    - Ctrl x to exit
