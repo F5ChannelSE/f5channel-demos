@@ -27,16 +27,15 @@ Task – Demonstrate a SQL injection vulnerability
 
 #. Attack Account Login
 
-  - From Firefox browser open new tab and access **juice2** app
-  - Click on **Account** then **Login**
-  - Enter *\' or 1=1; \-\-* for Email and random characters for password
+   - From Firefox browser open new tab and access **juice2** app
+   - Click on **Account** then **Login**
+   - Login with *\' or 1=1; \-\-* for Email and random characters for Password
 
    .. image:: ./images/attacklogin.png
 
    - Review the successful login as *admin*
 
    .. image:: ./images/successlogin.png
-
 
 #. Paste the following path in your browser's location bar after the FQDN of the Juice Shop:
 
