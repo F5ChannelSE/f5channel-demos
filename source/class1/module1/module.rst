@@ -29,7 +29,7 @@ Task – Demonstrate a SQL injection vulnerability
 
   - From Firefox browser open new tab and access **juice2** app
   - Click on **Account** then **Login**
-  - Enter *' or 1=1; \-\-* for Email and random characters for password
+  - Enter *\' or 1=1; \-\-* for Email and random characters for password
 
    .. image:: ./images/attacklogin.png
 
