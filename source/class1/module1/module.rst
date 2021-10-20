@@ -20,48 +20,17 @@ Task – Explore BIG-IP AWAF Policy Attachement
 
    .. NOTE::
 
-      Notice A7 Cross-site Scripting (XSS) has 100% compliance
-
-Task Demonstrate a server side cross site scripting (XSS) vulnerability
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#. From Firefox browser select **Juice1 tab** or open new tab and select **Juice1** from favorites to access protected Juice Shop
-
-   .. image:: ./images/juice1.png
-
-#. Visit the About page so you can see that it hasn't been hacked yet by clicking on the hamburger menu in the top left corner of the page:
-
-   .. image:: ./images/hamburger_menu.png
-
-#. click on **About Us**.
-
-   .. image:: ./images/aboutus_menu.png
-
-   - You should see a bunch of lorem ipsum text and a slider of customer feedback entries retrieved from the database.
-
-   .. image:: ./images/aboutus_page.png
-
-#. We will insert our cross site scripting hack into the database via the Customer Feedback form. Click on the hamburger menu again and then click on **Customer Feedback**.
-
-   .. image:: ./images/customer_feedback.png
-   
-#. In the comment area paste the following:
-
-   .. code-block:: none
-
-      <<script>FUD</script>iframe allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1030254214&auto_play=true>
-
-#. Then, choose any amount of stars for the rating and answer the math challenge and then click Submit.
-
-   .. image:: ./images/xss_cust_feedback_form.png
-
-#. Now head back over to the About page by clicking on the hamburger menu and then clicking on About. You should hear a jingle about the Juice Shop.
+      Notice A1 Injection and A7 Cross-site Scripting (XSS) have 100% compliance
 
 Task – Demonstrate a SQL injection vulnerability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Paste the following path in your browser's location bar after the FQDN of the Juice Shop:
+#. Attack Account Login
 
+- From Firebox open new tab and access the book marked unprotected **juice2** app
+- Click on **Account** then **Login**
+
+#. Paste the following path in your browser's location bar after the FQDN of the Juice Shop:
 
 .. code-block:: none
    
@@ -98,3 +67,37 @@ Click on the file ``premium.key`` and attempt to download it.
 
 The files in this directory can be downloaded. A good WAF policy should block access to sensitive file types.
 
+Task Demonstrate a server side cross site scripting (XSS) vulnerability
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. From Firefox browser select **Juice1 tab** or open new tab and select **Juice1** from favorites to access protected Juice Shop
+
+   .. image:: ./images/juice1.png
+
+#. Visit the About page so you can see that it hasn't been hacked yet by clicking on the hamburger menu in the top left corner of the page:
+
+   .. image:: ./images/hamburger_menu.png
+
+#. click on **About Us**.
+
+   .. image:: ./images/aboutus_menu.png
+
+   - You should see a bunch of lorem ipsum text and a slider of customer feedback entries retrieved from the database.
+
+   .. image:: ./images/aboutus_page.png
+
+#. We will insert our cross site scripting hack into the database via the Customer Feedback form. Click on the hamburger menu again and then click on **Customer Feedback**.
+
+   .. image:: ./images/customer_feedback.png
+   
+#. In the comment area paste the following:
+
+   .. code-block:: none
+
+      <<script>FUD</script>iframe allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1030254214&auto_play=true>
+
+#. Then, choose any amount of stars for the rating and answer the math challenge and then click Submit.
+
+   .. image:: ./images/xss_cust_feedback_form.png
+
+#. Now head back over to the About page by clicking on the hamburger menu and then clicking on About. You should hear a jingle about the Juice Shop.
