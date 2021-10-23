@@ -49,7 +49,7 @@ Task – Demonstrate a SQL injection vulnerability
 
    .. image:: ./images/juice_shop_users.png
 
-#. Attack Account Login of AWAF portected app
+#. Attack Account Login of app protected by **juice_awaf** policy
 
    - From Firefox browser open new tab and access **juice1** app
    - Click on **Account** then **Login**
@@ -57,11 +57,20 @@ Task – Demonstrate a SQL injection vulnerability
 
    .. image:: ./images/attacklogin.png
 
-   - The result should a blocked message
+   - This should result with *invalid object* error and failed login attempt
 
-   .. image:: ./images/successlogin.png
+   .. image:: ./images/blockedlogin.png
 
-#. Attack Search API of AWAF protected app
+   - Click on BIG-IP GUI **Security->Event Logs->Application->Request** to list the blocked attempts
+   - Click on the *user ``login blocked attempt`` to reveal the details
+
+   .. image:: ./images/sqllogin.png
+
+   .. NOTE::
+
+      Note Attack Type of SQL Injection and Rating Violation of 4 which indicates additional examination is required to reduce false positives      
+
+#. Attack Search API of app protected by **juice_awaf** policy
 
    - Paste the following path in your browser's location bar 
 
