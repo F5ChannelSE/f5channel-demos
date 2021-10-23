@@ -25,7 +25,7 @@ Task – Explore BIG-IP AWAF Policy Attachement
 Task – Demonstrate a SQL injection vulnerability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Attack Account Login
+#. Attack Account Login of unprotected app
 
    - From Firefox browser open new tab and access **juice2** app
    - Click on **Account** then **Login**
@@ -37,7 +37,7 @@ Task – Demonstrate a SQL injection vulnerability
 
    .. image:: ./images/successlogin.png
 
-#. Attack Search API
+#. Attack Search API or unprotected app
 
    - Paste the following path in your browser's location bar 
 
@@ -45,35 +45,35 @@ Task – Demonstrate a SQL injection vulnerability
       
       https://10.1.10.146/rest/products/search?q=qwert%27%29%29%20UNION%20SELECT%20id%2C%20email%2C%20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277%27%2C%20%278%27%2C%20%279%27%20FROM%20Users--
 
-   - The location bar should look something like (don't copy this since your FQDN will be different):
-
-   .. code-block:: none
-      
-      https://ba3eff45-2f23-49ab-8122-2e3bdc1ed9ad.access.udf.f5.com/rest/products/search?q=qwert%27%29%29%20UNION%20SELECT%20id%2C%20email%2C%20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277%27%2C%20%278%27%2C%20%279%27%20FROM%20Users--
-
    - The result should be a list of all the users in the database including their hashed passwords.
 
    .. image:: ./images/juice_shop_users.png
 
-Task - Demonstrate a privilege escalation vulnerability
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#. Attack Account Login of AWAF portected app
 
-Use a rainbow lookup table to expose the admin user's password by navigating to https://crackstation.net/ and entering the hash
+   - From Firefox browser open new tab and access **juice1** app
+   - Click on **Account** then **Login**
+   - Login with *\' or 1=1; \-\-* for Email and random characters for Password
+
+   .. image:: ./images/attacklogin.png
+
+   - The result should a blocked message
+
+   .. image:: ./images/successlogin.png
+
+#. Attack Search API of AWAF protected app
+
+   - Paste the following path in your browser's location bar 
+
+   .. code-block:: none
+      
+      https://10.1.10.146/rest/products/search?q=qwert%27%29%29%20UNION%20SELECT%20id%2C%20email%2C%20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277%27%2C%20%278%27%2C%20%279%27%20FROM%20Users--
+
+   - The result should a blocked message
+
+   .. image:: ./images/juice_shop_users.png
 
 
-.. image:: ./images/juice_shop_crackstation.png
-
-
-Task - Demonstrate an unauthorized file access vulnerability
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Navigate to /encryptionkeys to expose an unwanted directory listing
-
-.. image:: ./images/juice_shop_encryptionkeys.png
-
-Click on the file ``premium.key`` and attempt to download it.
-
-The files in this directory can be downloaded. A good WAF policy should block access to sensitive file types.
 
 Task Demonstrate a server side cross site scripting (XSS) vulnerability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
