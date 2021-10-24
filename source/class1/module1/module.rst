@@ -78,13 +78,13 @@ Task – Demonstrate a SQL injection vulnerability
       
       https://10.1.10.145/rest/products/search?q=qwert%27%29%29%20UNION%20SELECT%20id%2C%20email%2C%20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277%27%2C%20%278%27%2C%20%279%27%20FROM%20Users--
 
-   - The result should be a AWAF blocked response message
+   - The result should be a request rejected response message triggered by **juice_awaf** policy
 
    .. image:: ./images/apiblockpage.png
 
-   - Copy the **support id**
+   - Copy the ``Support ID``
    - Click on BIG-IP GUI **Security->Event Logs->Application->Request** to list the blocked attempts
-   - Click on ``filter`` and paste **Support ID** then Apply filter to reveal details of the blocked event
+   - Click on **filter** icon and paste ``Support ID`` then **Apply Filter** to reveal details of the blocked event
 
    .. image:: ./images/apifilter.png
    .. image:: ./images/sqlapi.png
