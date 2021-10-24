@@ -62,7 +62,7 @@ Task – Demonstrate a SQL injection vulnerability
    .. image:: ./images/blockedlogin.png
 
    - Click on BIG-IP GUI **Security->Event Logs->Application->Request** to list the blocked attempts
-   - Click on the *user ``login blocked attempt`` to reveal the details
+   - Click on the ``login blocked attempt`` to reveal the details
 
    .. image:: ./images/sqllogin.png
 
@@ -76,11 +76,22 @@ Task – Demonstrate a SQL injection vulnerability
 
    .. code-block:: none
       
-      https://10.1.10.146/rest/products/search?q=qwert%27%29%29%20UNION%20SELECT%20id%2C%20email%2C%20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277%27%2C%20%278%27%2C%20%279%27%20FROM%20Users--
+      https://10.1.10.145/rest/products/search?q=qwert%27%29%29%20UNION%20SELECT%20id%2C%20email%2C%20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277%27%2C%20%278%27%2C%20%279%27%20FROM%20Users--
 
-   - The result should a blocked message
+   - The result should be a AWAF blocked response message
 
-   .. image:: ./images/juice_shop_users.png
+   .. image:: ./images/apiblockpage.png
+
+   - Copy the **support id**
+   - Click on BIG-IP GUI **Security->Event Logs->Application->Request** to list the blocked attempts
+   - Click on ``filter`` and paste **Support ID** then Apply filter to reveal details of the blocked event
+
+   .. image:: ./images/apifilter.png
+   .. image:: ./images/sqlapi.png
+
+   .. NOTE::
+
+      Note Attack Type of SQL Injection and Rating Violation of 5 which indicates request most likely a threat     
 
 
 
