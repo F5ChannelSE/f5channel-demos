@@ -41,9 +41,14 @@ components:
 
     * - **Component**
       - **Management**
-      - **Internal**
       - **External**
+      - **Internal**
       - **Additional IP**
+    * - BIG-IP1
+      - 10.1.1.245
+      - 10.1.10.245
+      - 10.1.20.245
+      - none
     * - Client Server
       - 10.1.1.2
       - 10.1.10.2
@@ -53,28 +58,20 @@ components:
       - 10.1.1.3
       - 10.1.10.3
       - 10.1.20.3
-      - none
-    * - BIG-IP1
-      - 10.1.1.245
-      - 10.1.10.245
-      - 10.1.20.245
-      - none
+      - 10.1.20.4
+
 
 
 Access Demo Environment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Click the **Go to my VM List** then find **show details** of ubuntu server to capture **external address** 
+#. Click **VScode** link on the left column to access remote session
 
-   .. image:: /pictures/demolab.png
-
-#. Browse to **External Address:8080** to access **VS Code** remote session
-
-#. Open **New Terminal** in **VS Code** to run commands in this lab
+#. From **VScode** open **New Terminal** in **VS Code** to run commands in this lab
 
    .. image:: /pictures/newterm.png
 
-#. Browse to **External Address:5800** to access **Firefox** remote browser
+#. Click **Firefox** link on the left column to access remote browser
 
 #. From **Firefox** login to BIG-IP management interface (https://10.1.1.245).  Credentials should be cached.  From **VM List->BIG-IP** click on **show details** then **password** to reveal password.
 
