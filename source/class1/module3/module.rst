@@ -6,18 +6,17 @@ Servers using Ansible playbooks.
 Task – Imperative - Create VS, Pool and Members using playbook variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. From Firefox browser explore BIG-IP GUI **Local Traffic -> Virtual Servers** to confirm app1 virtual servers does not exist
+#. From Firefox browser explore BIG-IP GUI **Local Traffic -> Virtual Servers** to confirm app110 virtual servers does not exist
 
-#. From VScode terminal examine file ``*playbooks/app1.yaml``
+#. From VScode explorer click on ``imperative.yaml`` to examine the playbook
 
-   - Type ``nano playbooks/app.yaml`` and note 
-   - Ctrl x to exit
+#. From VScode terminal cd to ``~/f5channel-demos/redhat``
 
-#. Run this playbook.
+#. Run the ansible playbook
 
-   - Type ``ansible-playbook -e @creds.yaml --ask-vault-pass playbooks/app.yaml``
+   - Type ``ansible-playbook playbooks/imperatiive.yaml`` 
 
-#. From Firefox browser explore BIG-IP GUI **Local Traffic -> Virtual Servers** to confirm app1 virtual servers now exists
+#. From Firefox browser explore BIG-IP GUI **Local Traffic -> Virtual Servers** to confirm app110 virtual servers now exists
 
 Task – Declarative - Create VS, Pool and Members using AS3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
