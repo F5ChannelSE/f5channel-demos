@@ -8,11 +8,146 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
 
 #. From Firefox browser explore BIG-IP GUI **Local Traffic -> Network Map** to confirm app110 virtual servers does not exist
 
-   .. image:: /pictures/nmap.png
+   .. image:: ./images/nmap.png
 
 #. From VScode explorer click on ``imperative.yaml`` to examine the playbook
 
-   .. image:: /pictures/imparative.png
+   .. code::
+
+      - name: App Collection f5_modules
+        hosts: bigips
+        connection: local
+        gather_facts: false
+
+        vars:
+          app:
+            partition: App110
+            name: app110_vs
+            vsip: 10.1.10.31
+            vsport: 80
+            memberport: 8080
+            poolname: app110_pool
+            members:
+              - 10.1.20.13
+              - 10.1.20.14
+          state: present
+          provider:
+            server: 10.1.1.245
+            server_port: 443
+            user: admin
+            password: Agility2021!
+            validate_certs: false
+
+
+        tasks:
+
+          - name: Create
+            block:
+
+              - name: Create partition
+                f5networks.f5_modules.bigip_partition:
+                  state: "{{ state }}"
+                  name: "{{ app['partition'] }}"
+                  provider: "{{ provider }}"
+                delegate_to: localhost
+
+              - name: Create HTTP Monitor
+                f5networks.f5_modules.bigip_monitor_http:
+                  state: "{{ state }}"
+                  name: http_mon
+                  receive: "I AM UP"
+                  partition: "{{ app['partition'] }}"
+                  provider: "{{ provider }}"
+                delegate_to: localhost
+
+              - name: Create Pool
+                f5networks.f5_modules.bigip_pool:
+                  state: "{{ state }}"
+                  name: "{{ app['poolname'] }}"
+                  partition: "{{ app['partition'] }}"
+                  monitors:
+                    - http_mon
+                  provider: "{{ provider }}"
+                delegate_to: localhost
+
+              - name: Add pool members
+                f5networks.f5_modules.bigip_pool_member:
+                  state: "{{ state }}"
+                  pool: "{{ app['poolname'] }}"
+                  partition: "{{ app['partition'] }}"
+                  host: "{{ item }}"
+                  port: "{{ app['memberport'] }}"
+                  provider: "{{ provider }}"
+                delegate_to: localhost
+                loop: "{{ app['members'] }}"
+
+              - name: Add virtual server
+                f5networks.f5_modules.bigip_virtual_server:
+                  state: "{{ state }}"
+                  partition: "{{ app['partition'] }}"
+                  name: "{{ app['name'] }}"
+                  destination: "{{ app['vsip'] }}"
+                  port: "{{ app['vsport'] }}"
+                  pool: "{{ app['poolname'] }}"
+                  profiles:
+                    - http
+                  provider: "{{ provider }}"
+                delegate_to: localhost
+
+            rescue: # BACKOUT LOGIC
+
+              - set_fact:
+                  state: absent
+
+              - name: Delete virtual server
+                f5networks.f5_modules.bigip_virtual_server:
+                  state: "{{ state }}"
+                  partition: "{{ app['partition'] }}"
+                  name: "{{ app['name'] }}"
+                  destination: "{{ app['vsip'] }}"
+                  port: "{{ app['vsport'] }}"
+                  pool: "{{ app['poolname'] }}"
+                  profiles:
+                    - http
+                  provider: "{{ provider }}"
+                delegate_to: localhost
+
+              - name: Delete Pool
+                f5networks.f5_modules.bigip_pool:
+                  state: "{{ state }}"
+                  name: "{{ app['poolname'] }}"
+                  partition: "{{ app['partition'] }}"
+                  monitors:
+                    - http_mon
+                  provider: "{{ provider }}"
+                delegate_to: localhost
+
+              - name: Delete Node
+                f5networks.f5_modules.bigip_node:
+                  state: "{{ state }}"
+                  name: "{{ item }}"
+                  address: "{{ item }}"
+                  partition: "{{ app['partition'] }}"
+                  provider: "{{ provider }}"
+                delegate_to: localhost
+                loop: "{{ app['members'] }}"
+
+              - name: Delete HTTP Monitor
+                f5networks.f5_modules.bigip_monitor_http:
+                  state: "{{ state }}"
+                  name: http_mon
+                  receive: "I AM UP"
+                  partition: "{{ app['partition'] }}"
+                  provider: "{{ provider }}"
+                delegate_to: localhost
+
+              - name: Delete partition
+                f5networks.f5_modules.bigip_partition:
+                  state: "{{ state }}"
+                  name: "{{ app['partition'] }}"
+                  provider: "{{ provider }}"
+                delegate_to: localhost
+
 
 #. From VScode terminal cd to redhat demo directory
 
@@ -22,11 +157,11 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
 
    - Type ``ansible-playbook playbooks/imperatiive.yaml`` 
 
-   .. image:: /pictures/runimparative.png
+   .. image:: ./images/runimparative.png
 
 #. From Firefox browser explore BIG-IP GUI **Local Traffic -> Network Map** to confirm app110 virtual servers now exists
 
-   .. image:: /pictures/nmapimparative.png
+   .. image:: ./images/nmapimparative.png
 
 
 Task – Declarative - Create VS, Pool and Members using AS3
