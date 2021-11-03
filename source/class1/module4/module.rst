@@ -13,7 +13,7 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
 
 #. From VScode explorer click on ``imparative/main.tf`` to examine the plan
 
-   .. image:: ./images/imparative.png
+   .. image:: ./images/imparativemain.png
 
    .. code::
        
@@ -76,19 +76,19 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
 
    - Type ``terraform init`` 
 
-   .. image:: ./images/runimparative.png
+   .. image:: ./images/imparativeinit.png
 
 #. Run the terraform plan
 
    - Type ``terraform plan`` 
 
-   .. image:: ./images/runimparative.png
+   .. image:: ./images/imparativeplan.png
 
        #. Run the terraform apply
 
    - Type ``terraform apply -auto-approve`` 
 
-   .. image:: ./images/runimparative.png
+   .. image:: ./images/imparativeapply.png
 
 
 #. From Firefox browser explore BIG-IP GUI **Local Traffic -> Network Map** to confirm app100 virtual servers now exists
