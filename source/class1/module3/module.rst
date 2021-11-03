@@ -12,6 +12,8 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
 
 #. From VScode explorer click on ``imperative.yaml`` to examine the playbook
 
+   .. image:: ./images/imparative.png
+
    .. code::
 
       - name: App Collection f5_modules
@@ -177,22 +179,22 @@ Task – Declarative - Create VS, Pool and Members using AS3
         gather_facts: false
 
         vars:
-          partition: ColNew
+          partition: App111
           apps:
-            - name: web
+            - name: app111_vs
               vsip: 10.1.10.100
               vsport: 80
               memberport: 8080
-              poolname: web_pool
+              poolname: app111_pool
               members:
                 - 10.1.20.52
                 - 10.1.20.53
                 - 10.1.20.55
-            - name: api
+            - name: api111_vs
               vsip: 10.1.10.100
               vsport: 3000
               memberport: 3000
-              poolname: api_pool
+              poolname: api111_pool
               members:
                 - 10.1.20.52
                 - 10.1.20.53
@@ -265,13 +267,10 @@ Task – Declarative - Create VS, Pool and Members using AS3
             }
           }
 
-#. From VScode terminal cd to redhat demo directory
-
-   - Type ``cd ~/f5channel-demos/redhat``
 
 #. Run the ansible playbook
 
-   - Type ``ansible-playbook playbooks/imperatiive.yaml`` 
+   - Type ``ansible-playbook playbooks/declaratiive.yaml`` 
 
    .. image:: /pictures/runimparative.png
 
