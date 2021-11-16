@@ -93,7 +93,7 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
 
 #. From Firefox browser explore BIG-IP GUI **Local Traffic -> Network Map** to confirm app100 virtual servers now exists
 
-   .. image:: ./images/nmapimparative.png
+   .. image:: ./images/mapimparative.png
 
 
 Task – Declarative - Create VS, Pool and Members using AS3
@@ -173,13 +173,11 @@ Task – Declarative - Create VS, Pool and Members using AS3
 
    - Type ``terraform init`` 
 
-   .. image:: ./images/runimparative.png
-
 #. Run the terraform plan
 
    - Type ``terraform plan`` 
 
-   .. image:: ./images/runimparative.png
+   .. image:: ./images/declarativeplan.png
 
        #. Run the terraform apply
 
@@ -189,4 +187,4 @@ Task – Declarative - Create VS, Pool and Members using AS3
 
 #. From Firefox browser explore BIG-IP GUI **Local Traffic -> Network Map** to confirm app101 virtual servers now exists
 
-   .. image:: /pictures/nmapimparative.png
+   .. image:: /pictures/mapimparative.png
