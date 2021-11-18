@@ -49,6 +49,11 @@ components:
       - 10.1.10.245
       - 10.1.20.245
       - none
+    * - NGINX
+      - 
+      - 10.1.10.50
+      - 
+      - 
     * - Client Server
       - 10.1.1.2
       - 10.1.10.2
@@ -65,7 +70,7 @@ components:
 Access Demo Environment
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Click **VScode** link on the left column to access remote session
+#. Click **VScode** link on the left column of cloudshare portal to access remote session
 
 #. From **VScode** open **New Terminal** in **VS Code** to run commands in this lab
 
@@ -73,7 +78,8 @@ Access Demo Environment
 
 #. Click **Firefox** link on the left column to access remote browser
 
-#. From **Firefox** login to BIG-IP management interface (https://10.1.1.245).  Credentials should be cached.  From **VM List->BIG-IP** click on **show details** then **password** to reveal password.
+Copy and paste can best be accomplished by staying within the Firefox browser
+otherwise you can leverage the clipboard found on top right.
 
-   .. image:: /pictures/bigiplogin.png
+
 
