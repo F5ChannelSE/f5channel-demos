@@ -6,6 +6,10 @@ and mitigation of common web attacks.
 Task – Explore BIG-IP AWAF Policy Attachement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+#. From **Firefox** click on BIG-IP1 bookmark to login to BIG-IP management gui (https://10.1.1.245).  Credentials should be cached.  From **VM List->BIG-IP** click on **show details** then **password** to reveal password.
+
+   .. image:: ./images/bigiplogin.png
+      
 #. From Firefox browser explore BIG-IP GUI **Local Traffic -> Virtual Servers** to view juice and hackazon apps are deployed
    
    .. image:: ./images/vslist.png
@@ -53,7 +57,7 @@ Task – Demonstrate a SQL injection vulnerability
 
    - From Firefox browser open new tab and access **juice1** app
    - Click on **Account** then **Login**
-   - Login with *\' or 1=1; \-\-* for Email and random characters for Password
+   - Login with ``' or 1=1; --`` for Email and random characters for Password
 
    .. image:: ./images/attacklogin.png
 
