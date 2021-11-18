@@ -4,48 +4,24 @@ Demo 2 - Mitigating OWASP Top 10 with NGINX App Protect
 Follow this script to demonstrate OWASP Top 10 compliance dashboard
 and mitigation of common web attacks.
 
-Task – Explore BIG-IP AWAF Policy Attachement
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task – Explore NGINX WAF Policy Attachement
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. From Firefox browser open new tab and click on NGINX bookmark to access gui
    
-   .. image:: ./images/vslist.png
+   .. image:: ./images/nginxdashboard.png
       
 #. Click on **upstream** to view juice app is deployed
    
-   .. image:: ./images/vslist.png
+   .. image:: ./images/upstream.png
 
 
 Task – Demonstrate a SQL injection vulnerability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Attack Account Login of unprotected app
+#. Attack Account Login of app protected by **nginx_waf** policy
 
    - From Firefox browser open new tab and access **juice3** app
-   - Click on **Account** then **Login**
-   - Login with *\' or 1=1; \-\-* for Email and random characters for Password
-
-   .. image:: ./images/attacklogin.png
-
-   - Review the successful login as *admin*
-
-   .. image:: ./images/successlogin.png
-
-#. Attack Search API or unprotected app
-
-   - Paste the following path in your browser's location bar 
-
-   .. code-block:: none
-      
-      https://10.1.10.147/rest/products/search?q=qwert%27%29%29%20UNION%20SELECT%20id%2C%20email%2C%20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277%27%2C%20%278%27%2C%20%279%27%20FROM%20Users--
-
-   - The result should be a list of all the users in the database including their hashed passwords.
-
-   .. image:: ./images/juice_shop_users.png
-
-#. Attack Account Login of app protected by **juice_awaf** policy
-
-   - From Firefox browser open new tab and access **juice1** app
    - Click on **Account** then **Login**
    - Login with *\' or 1=1; \-\-* for Email and random characters for Password
 
@@ -55,7 +31,7 @@ Task – Demonstrate a SQL injection vulnerability
 
    .. image:: ./images/blockedlogin.png
 
-   - Click on BIG-IP GUI **Security->Event Logs->Application->Request** to list the blocked attempts
+   - Examine logs **nap_log** to list the blocked attempts
    - Click on the ``login blocked attempt`` to reveal the details
 
    .. image:: ./images/sqllogin.png
@@ -64,20 +40,20 @@ Task – Demonstrate a SQL injection vulnerability
 
       Note Attack Type of SQL Injection and Rating Violation of 4 which indicates additional examination is required to reduce false positives      
 
-#. Attack Search API of app protected by **juice_awaf** policy
+#. Attack Search API of app protected by **nginx_waf** policy
 
    - Paste the following path in your browser's location bar 
 
    .. code-block:: none
       
-      https://10.1.10.147/rest/products/search?q=qwert%27%29%29%20UNION%20SELECT%20id%2C%20email%2C%20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277%27%2C%20%278%27%2C%20%279%27%20FROM%20Users--
+      http://10.1.10.50/rest/products/search?q=qwert%27%29%29%20UNION%20SELECT%20id%2C%20email%2C%20password%2C%20%274%27%2C%20%275%27%2C%20%276%27%2C%20%277%27%2C%20%278%27%2C%20%279%27%20FROM%20Users--
 
-   - The result should be a request rejected response message triggered by **juice_awaf** policy
+   - The result should be a request rejected response message triggered by **nginx_waf** policy
 
    .. image:: ./images/apiblockpage.png
 
    - Copy the ``Support ID``
-   - Click on NGINX GUI **Security->Event Logs->Application->Request** to list the blocked attempts
+   - Click on NGINX GUI **nap_log** to list the blocked attempts
    - Click on **filter** icon and paste ``Support ID`` then **Apply Filter** to reveal details of the blocked event
 
    .. image:: ./images/apifilter.png
