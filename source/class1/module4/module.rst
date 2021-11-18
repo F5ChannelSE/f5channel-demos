@@ -1,5 +1,5 @@
-Demo 4 - Automating BIG-IP with Terraform
-=========================================
+Automating BIG-IP with Terraform
+================================
 
 Follow this script to demonstrate creation of Pools and Virtual
 Servers using Terraform plans.

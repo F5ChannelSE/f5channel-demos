@@ -1,5 +1,5 @@
-Demo 1 - Mitigating OWASP Top 10 with Advanced WAF
-==================================================
+Mitigating OWASP Top 10 with Advanced WAF
+=========================================
 Follow this script to demonstrate OWASP Top 10 compliance dashboard
 and mitigation of common web attacks.
 

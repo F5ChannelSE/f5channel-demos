@@ -50,10 +50,10 @@ components:
       - 10.1.20.245
       - none
     * - NGINX
-      - 
+      - none
       - 10.1.10.50
-      - 
-      - 
+      - none
+      - none
     * - Client Server
       - 10.1.1.2
       - 10.1.10.2
@@ -75,6 +75,7 @@ Access Demo Environment
 #. From **VScode** open **New Terminal** in **VS Code** to run commands in this lab
 
    .. image:: /pictures/newterm.png
+
 
 #. Click **Firefox** link on the left column to access remote browser
 

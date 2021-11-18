@@ -1,5 +1,5 @@
-Demo 3 - BIG-IP Automation with Ansible
-=======================================
+BIG-IP Automation with Ansible
+==============================
 Follow this script to demonstrate creation of Pools and Virtual
 Servers using Ansible playbooks.
 
