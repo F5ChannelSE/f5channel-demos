@@ -10,7 +10,7 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
 
    .. image:: ./images/nmap.png
 
-#. From VScode explorer click on ``imperative.yaml`` to examine the playbook
+#. From VScode explorer click on ``imparative.yaml`` to examine the playbook
 
    .. image:: ./images/imparative.png
 
@@ -157,7 +157,7 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
 
 #. Run the ansible playbook
 
-   - Type ``ansible-playbook playbooks/imperatiive.yaml`` 
+   - Type ``ansible-playbook playbooks/imparative.yaml`` 
 
    .. image:: ./images/runimparative.png
 
@@ -168,6 +168,7 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
 
 Task – Declarative - Create VS, Pool and Members using AS3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**WARNING - This section is still under construction and will not work as documented.**
 
 #. From VScode explorer click on ``declarative.yaml`` to examine the playbook
 

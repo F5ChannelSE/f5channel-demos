@@ -1,8 +1,7 @@
 Demo 2 - Mitigating OWASP Top 10 with NGINX App Protect
 =======================================================
 
-Follow this script to demonstrate OWASP Top 10 compliance dashboard
-and mitigation of common web attacks.
+Follow this script to demonstrate mitigation of common web attacks.
 
 Task – Explore NGINX WAF Policy Attachement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -14,6 +13,7 @@ Task – Explore NGINX WAF Policy Attachement
 #. Click on **upstream** to view juice app is deployed
    
    .. image:: ./images/upstream.png
+
 
 
 Task – Demonstrate a SQL injection vulnerability
