@@ -32,9 +32,6 @@ Task – Demonstrate a SQL injection vulnerability
    .. image:: ./images/blockedlogin.png
 
    - Examine logs **nap_log** to list the blocked attempts
-   - Click on the ``login blocked attempt`` to reveal the details
-
-   .. image:: ./images/sqllogin.png
 
    .. NOTE::
 
@@ -50,14 +47,10 @@ Task – Demonstrate a SQL injection vulnerability
 
    - The result should be a request rejected response message triggered by **nginx_waf** policy
 
-   .. image:: ./images/apiblockpage.png
+   .. image:: ./images/supportid.png
 
    - Copy the ``Support ID``
-   - Click on NGINX GUI **nap_log** to list the blocked attempts
-   - Click on **filter** icon and paste ``Support ID`` then **Apply Filter** to reveal details of the blocked event
-
-   .. image:: ./images/apifilter.png
-   .. image:: ./images/sqlapi.png
+   - Examine **nap_log** to list the blocked attempts
 
    .. NOTE::
 

@@ -10,7 +10,7 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
 
    .. image:: ./images/nmap.png
 
-#. From VScode explorer click on ``imparative.yaml`` to examine the playbook
+#. From VScode explorer click on ``redhat->playbooks->imparative.yaml`` to examine the playbook
 
    .. image:: ./images/imparative.png
 
@@ -23,12 +23,12 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
 
         vars:
           app:
-            partition: App110
-            name: app110_vs
+            partition: App120
+            name: app120
             vsip: 10.1.10.110
             vsport: 80
             memberport: 8080
-            poolname: app110_pool
+            poolname: app120_pool
             members:
               - 10.1.20.8
               - 10.1.20.9
@@ -57,7 +57,6 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
                 f5networks.f5_modules.bigip_monitor_http:
                   state: "{{ state }}"
                   name: http_mon
-                  receive: "I AM UP"
                   partition: "{{ app['partition'] }}"
                   provider: "{{ provider }}"
                 delegate_to: localhost
@@ -138,7 +137,6 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
                 f5networks.f5_modules.bigip_monitor_http:
                   state: "{{ state }}"
                   name: http_mon
-                  receive: "I AM UP"
                   partition: "{{ app['partition'] }}"
                   provider: "{{ provider }}"
                 delegate_to: localhost
@@ -163,7 +161,13 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
 
 #. From Firefox browser explore BIG-IP GUI **Local Traffic -> Network Map** to confirm app110 virtual servers now exists
 
-   .. image:: ./images/nmapimparative.png
+   .. image:: ./images/nmapaimparative.png
+
+#. Run the ansible playbook to remove
+
+   - Type ``ansible-playbook playbooks/imparative.yaml -e state="absent"`` 
+
+#. From Firefox browser refresh BIG-IP GUI **Local Traffic -> Network Map** to confirm app110 virtual server is removed
 
 
 Task – Declarative - Create VS, Pool and Members using AS3
@@ -282,3 +286,9 @@ Task – Declarative - Create VS, Pool and Members using AS3
 #. From Firefox browser explore BIG-IP GUI **Local Traffic -> Network Map** to confirm app110 virtual servers now exists
 
    .. image:: /pictures/nmapimparative.png
+
+#. Run the ansible playbook to remove
+
+   - Type ``ansible-playbook playbooks/declarative.yaml -e state="absent"`` 
+
+#. From Firefox browser refresh BIG-IP GUI **Local Traffic -> Network Map** to confirm app110 virtual server is removed
