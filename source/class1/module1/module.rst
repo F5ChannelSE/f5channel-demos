@@ -43,7 +43,7 @@ Task – Demonstrate a SQL injection vulnerability
 
 #. Attack Search API or unprotected app
 
-   - Paste the following path in your browser's location bar 
+   - Click on API attack bookmark or paste the following in your browser's location bar 
 
    .. code-block:: none
       
@@ -76,7 +76,7 @@ Task – Demonstrate a SQL injection vulnerability
 
 #. Attack Search API of app protected by **juice_awaf** policy
 
-   - Paste the following path in your browser's location bar 
+   - Click on API attack bookmark and change ip address to 10.1.10.145 or paste the following in your browser's location bar 
 
    .. code-block:: none
       

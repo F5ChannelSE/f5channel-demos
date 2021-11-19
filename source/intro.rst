@@ -52,7 +52,7 @@ components:
     * - NGINX
       - none
       - 10.1.10.50
-      - none
+      - 10.1.20.50
       - none
     * - Client Server
       - 10.1.1.2
@@ -77,10 +77,10 @@ Access Demo Environment
    .. image:: /pictures/newterm.png
 
 
-#. Click **Firefox** link on the left column to access remote browser
+#. Click **Firefox** link on the left column of cloudshare portal to access remote browser
 
 Copy and paste can best be accomplished by staying within the Firefox browser
-otherwise you can leverage the clipboard found on top right.
+however you can leverage the clipboard found on top right if trying to paste into the browser
 
 
 

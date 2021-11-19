@@ -40,8 +40,8 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
         }
 
         resource "bigip_ltm_node" "node" {
-          name    = "/Common/10.1.20.115"
-          address = "10.1.20.115"
+          name    = "/Common/10.1.20.5"
+          address = "10.1.20.5"
         }
 
         resource "bigip_ltm_pool" "pool" {
@@ -55,14 +55,14 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
 
         resource "bigip_ltm_pool_attachment" "attach_node" {
           pool = "/Common/app100_pool"
-          node = "/Common/10.1.20.115:80"
+          node = "/Common/10.1.20.5:80"
           depends_on = [bigip_ltm_pool.pool, bigip_ltm_node.node]
         }
 
         resource "bigip_ltm_virtual_server" "http" {
           pool = "/Common/app100_pool"
           name = "/Common/app100_vs"
-          destination = "10.1.10.25"
+          destination = "10.1.10.100"
           port = 80
           source_address_translation = "automap"
           depends_on = [bigip_ltm_pool.pool]
@@ -157,8 +157,8 @@ Task – Declarative - Create VS, Pool and Members using AS3
                                {
                                    "servicePort": 80,
                                    "serverAddresses": [
-                                       "10.1.20.100",
-                                       "10.1.20.101"
+                                       "10.1.20.7",
+                                       "10.1.20.8"
                                    ]
                                }
                            ]

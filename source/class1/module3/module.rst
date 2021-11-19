@@ -25,13 +25,13 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
           app:
             partition: App110
             name: app110_vs
-            vsip: 10.1.10.31
+            vsip: 10.1.10.110
             vsport: 80
             memberport: 8080
             poolname: app110_pool
             members:
-              - 10.1.20.13
-              - 10.1.20.14
+              - 10.1.20.5
+              - 10.1.20.6
           state: present
           provider:
             server: 10.1.1.245
@@ -183,23 +183,23 @@ Task – Declarative - Create VS, Pool and Members using AS3
           partition: App111
           apps:
             - name: app111_vs
-              vsip: 10.1.10.100
+              vsip: 10.1.10.111
               vsport: 80
-              memberport: 8080
+              memberport: 80
               poolname: app111_pool
               members:
-                - 10.1.20.52
-                - 10.1.20.53
-                - 10.1.20.55
+                - 10.1.20.7
+                - 10.1.20.8
+                - 10.1.20.9
             - name: api111_vs
-              vsip: 10.1.10.100
-              vsport: 3000
-              memberport: 3000
+              vsip: 10.1.10.111
+              vsport: 8080
+              memberport: 8080
               poolname: api111_pool
               members:
-                - 10.1.20.52
-                - 10.1.20.53
-                - 10.1.20.54
+                - 10.1.20.7
+                - 10.1.20.8
+                - 10.1.20.9
           provider:
             ansible_host: 10.1.1.245
             ansible_user: admin
@@ -270,6 +270,10 @@ Task – Declarative - Create VS, Pool and Members using AS3
 
 
 #. Run the ansible playbook
+
+**WARNING - This section is still under construction and will not work as documented.**
+**WARNING - This section is still under construction and will not work as documented.**
+**WARNING - This section is still under construction and will not work as documented.**
 
    - Type ``ansible-playbook playbooks/declaratiive.yaml`` 
 
