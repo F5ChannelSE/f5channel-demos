@@ -30,8 +30,8 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
             memberport: 8080
             poolname: app110_pool
             members:
-              - 10.1.20.5
-              - 10.1.20.6
+              - 10.1.20.8
+              - 10.1.20.9
           state: present
           provider:
             server: 10.1.1.245

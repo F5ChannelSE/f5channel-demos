@@ -70,7 +70,7 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
 
 #. From VScode terminal cd to hashicorp demo directory
 
-   - Type ``cd ~/f5channel-demos/hashicorp/imparative``
+   - Type ``cd ~/f5channel-demos/hashicorp/imperative/``
 
 #. Run the terraform init
 
@@ -84,16 +84,21 @@ Task – Imperative - Create VS, Pool and Members using playbook variables
 
    .. image:: ./images/imparativeplan.png
 
-       #. Run the terraform apply
+#. Run the terraform apply
 
    - Type ``terraform apply -auto-approve`` 
 
    .. image:: ./images/imparativeapply.png
 
-
-#. From Firefox browser explore BIG-IP GUI **Local Traffic -> Network Map** to confirm app100 virtual servers now exists
+#. From Firefox browser explore BIG-IP GUI **Local Traffic -> Network Map** to confirm app100 virtual server now exists
 
    .. image:: ./images/mapimparative.png
+
+#. Run the terraform destroy
+
+   - Type ``terraform destroy -auto-approve`` 
+
+#. From Firefox browser refresh BIG-IP GUI **Local Traffic -> Network Map** to confirm app100 virtual server is removed
 
 
 Task – Declarative - Create VS, Pool and Members using AS3
@@ -168,6 +173,9 @@ Task – Declarative - Create VS, Pool and Members using AS3
            }
        }
 
+#. From VScode terminal cd to hashicorp demo directory
+
+   - Type ``cd ~/f5channel-demos/hashicorp/declarative/``
 
 #. Run the terraform init
 
@@ -187,4 +195,10 @@ Task – Declarative - Create VS, Pool and Members using AS3
 
 #. From Firefox browser explore BIG-IP GUI **Local Traffic -> Network Map** to confirm app101 virtual servers now exists
 
-   .. image:: /pictures/mapimparative.png
+   .. image:: /pictures/maptdeclarative.png
+
+#. Run the terraform destroy
+
+   - Type ``terraform destroy -auto-approve`` 
+
+#. From Firefox browser refresh BIG-IP GUI **Local Traffic -> Network Map** to confirm app101 virtual server removed
