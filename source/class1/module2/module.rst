@@ -9,7 +9,7 @@ Task – Explore NGINX WAF Policy Attachement
 #. From Firefox browser open new tab and click on NGINX bookmark to access gui
    
    .. image:: ./images/nginxdashboard.png
-        :width: 400
+        :width: 100
         :alt: Alternative text
       
 #. Click on **upstream** to view juice app is deployed
