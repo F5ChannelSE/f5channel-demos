@@ -9,12 +9,12 @@ Task – Explore NGINX WAF Policy Attachement
 #. From Firefox browser open new tab and click on NGINX bookmark to access gui
    
    .. image:: ./images/nginxdashboard.png
-        :width: 300
+        :width: 500
       
 #. Click on **upstream** to view juice app is deployed
    
    .. image:: ./images/upstream.png
-        :width: 300
+        :width: 500
 
 
 Task – Demonstrate a SQL injection vulnerability
@@ -32,7 +32,7 @@ Task – Demonstrate a SQL injection vulnerability
    - This should result with *invalid object* error and failed login attempt
 
    .. image:: ./images/blockedlogin.png
-        :width: 300
+        :width: 500
 
    - Examine logs **nap_log** to list the blocked attempts
 
@@ -51,7 +51,7 @@ Task – Demonstrate a SQL injection vulnerability
    - The result should be a request rejected response message triggered by **nginx_waf** policy
 
    .. image:: ./images/supportid.png
-        :width: 300
+        :width: 500
 
    - Copy the ``Support ID``
    - Examine **nap_log** to list the blocked attempts
